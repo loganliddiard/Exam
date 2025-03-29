@@ -68,7 +68,7 @@ public class Game {
         scrollOffset_road1 = TOP; // Initial position, will move up over time
         scrollOffset_road2 = TOP - screen_height;
         scrollOffset_road3 = TOP - screen_height - screen_height;
-        scrollSpeed = 0.9f; // Adjust speed for smooth scrolling
+        scrollSpeed = 1.3f; // Adjust speed for smooth scrolling
 
 
 
@@ -272,9 +272,6 @@ public class Game {
                 scrollOffset_road2 +=   (scrollSpeed * elapsedTime);
 
 
-                System.out.println("ROAD 1 = "+scrollOffset_road1);
-                System.out.println("ROAD 2 = "+scrollOffset_road2);
-
                 if(scrollOffset_road1 > screen_height + TOP){
                     scrollOffset_road1 = scrollOffset_road2 - (screen_height);
                 }
@@ -370,13 +367,13 @@ public class Game {
                     String scored = "You scored "+spawner.getDodged()+" points!";
                     //graphics.drawTextByHeight(sub_font, "Starting in : "+String.format("%.2f",transitionDelay - (glfwGetTime() - gameStartTime)), title_position_x, title_position_y, title_textHeight, Color.WHITE);
                     float width = font.measureTextWidth(gameover, textHeight);
-                    graphics.drawTextByHeight(font, gameover, 0.0f - width / 2, top, textHeight, Color.WHITE);
+                    graphics.drawTextByHeight(sub_font, gameover, 0.0f - width / 2, top, textHeight, Color.WHITE);
 
                     width = font.measureTextWidth(thanks, textHeight);
-                    graphics.drawTextByHeight(font, thanks, 0.0f - width / 2, top+textHeight, textHeight, Color.WHITE);
+                    graphics.drawTextByHeight(sub_font, thanks, 0.0f - width / 2, top+textHeight, textHeight, Color.WHITE);
 
                     width = font.measureTextWidth(scored, textHeight);
-                    graphics.drawTextByHeight(font, scored, 0.0f - width / 2, top+textHeight+textHeight, textHeight, Color.WHITE);
+                    graphics.drawTextByHeight(sub_font, scored, 0.0f - width / 2, top+textHeight+textHeight, textHeight, Color.WHITE);
 
                 }
 

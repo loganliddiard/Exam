@@ -29,7 +29,7 @@ public class ObstacleCar {
             height = .25f;
 
             pos_x = leftMost + (lane_width * lane_num);
-            speed = .6f;
+            speed = 1.0f;
             pos_y = top-height;
 
         }
